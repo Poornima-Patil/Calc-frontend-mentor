@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+        
+        input[type="range"] {
+            background-color: transparent;
+            background: linear-gradient(#333333, #222222);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-theme2-screenbg min-h-screen">
+    <div class="max-h-md max-w-md m-auto flex flex-col ">
+        <h1 id="theme-options" class="pt-40 text-end"> &nbsp; 1 &nbsp; 2 &nbsp; 3 &nbsp;</h1>
+        <div class="flex justify-between theme1-screenbg" id="calc-container">
+            <p class="text-2xl">calc</p>
+            <div class="flex gap-2">
+                <p class="text-md"> Theme </p>
+                <div class="rounded-2xl px-2 pt-1 " id="themes-container">
+
+                    <!-- <input type="range" min=1 max=3 step="1" class="w-16 bg-theme2-bg text-red-600" id="theme-input">
+                    -->
+
+                    <input class="inline radio-input" type="radio" name="theme" value=1 checked>
+                    <input class="inline radio-input" type="radio" name="theme" value=2 name="optradio">
+                    <input class="inline radio-input" type="radio" name="theme" value=3 name="optradio">
+
+
+                </div>
+            </div>
+        </div>
+
+        <input id="output-container" type="text" class="border-2 text-right max-w-md bg-theme2-bg mt-8 p-8 rounded-lg text-2xl">
+
+        <div id="keypad-container" class="grid grid-cols-4 grid-rows-5 bg-theme2-keypadbg mt-4 mb-20 rounded-md font-bold">
+            <button onclick="calculate(7)" class="m-4 drop-shadow rounded-md mt-2"> 7 </button>
+            <button onclick="calculate(8)" class="m-4 drop-shadow rounded-md mt-2" value="8"> 8 </button>
+            <button onclick="calculate(9)" class=" m-4 drop-shadow rounded-md mt-2" value="9"> 9 </button>
+            <button id="del-btn" onclick="del()" class="m-4 drop-shadow rounded-md mt-2" value="del"> DEL </button>
+            <button onclick="calculate(4)" class="m-4 drop-shadow rounded-md mt-2" value="4"> 4 </button>
+            <button onclick="calculate(5)" class="m-4 drop-shadow rounded-md mt-2" value="5"> 5 </button>
+            <button onclick="calculate(6)" class=" m-4 drop-shadow rounded-md mt-2" value="6"> 6 </button>
+            <button onclick="calculate('+')" class=" m-4 drop-shadow rounded-md mt-2" value="+"> + </button>
+            <button onclick="calculate(1)" class=" m-4 drop-shadow rounded-md mt-2" value="1"> 1 </button>
+            <button onclick="calculate(2)" class=" m-4 drop-shadow rounded-md mt-2" value="2"> 2 </button>
+            <button onclick="calculate(3)" class=" m-4 drop-shadow rounded-md mt-2" value="3"> 3 </button>
+            <button onclick="calculate('-')" class=" m-4 drop-shadow rounded-md mt-2" value="-"> - </button>
+            <button onclick="calculate('.')" class=" m-4 drop-shadow rounded-md mt-2" value="."> . </button>
+            <button onclick="calculate(0)" class=" m-4 drop-shadow rounded-md mt-2" value="0"> 0 </button>
+            <button onclick="calculate('/')" class=" m-4 drop-shadow rounded-md mt-2" value="/"> / </button>
+            <button onclick="calculate('*')" class=" m-4 drop-shadow rounded-md mt-2" value="x"> x </button>
+            <button id="reset-btn" onclick="reset()" class="col-span-2   m-4 rounded-md font-bold mt-2" value="reset"> RESET </button>
+            <button id="equals-btn" onclick="result()" class="col-span-2 m-4 rounded-md font-bold mt-2"> = </button>
+
+        </div>
+
+
+    </div>
+    </div>
+
+</body>
+
+</html>
